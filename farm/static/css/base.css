@@ -30,6 +30,10 @@ nav {
     padding: 10px 0;
     color: #fff;
     text-align: center;
+    z-index: 1030;
+    /* Bootstrap's default z-index for navbar is 1030 */
+    position: relative;
+    /* z-index works on positioned elements (position: absolute, position: relative, or position: fixed) */
 }
 
 nav ul {
