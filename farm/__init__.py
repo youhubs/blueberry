@@ -23,7 +23,7 @@ def create_app(config_class=Config):
     login_manager.init_app(app)
     mail.init_app(app)
 
-    from farm.main.routes import main
+    from farm.routes import main
     from farm.users.routes import users
     app.register_blueprint(main)
     app.register_blueprint(users)

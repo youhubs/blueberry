@@ -12,6 +12,24 @@ def home():
     return render_template('home.html', )  # posts=posts
 
 
+@main.route("/about")
+def about():
+    return render_template('about.html', title='About')
+
+
+@main.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+        # Process the form data and send an email or save to database
+        # ...
+        return 'Thank you for your message!'
+    else:
+        return render_template('contact.html', title='Contact')
+
+
 @main.route('/products')
 def products():
     products = [
@@ -31,21 +49,3 @@ def events():
             'description': 'Join us for a day of fun and food!', 'location': '456 Elm St.'},
     ]
     return render_template('events.html', events=events)
-
-
-@main.route('/contact', methods=['GET', 'POST'])
-def contact():
-    if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
-        message = request.form['message']
-        # Process the form data and send an email or save to database
-        # ...
-        return 'Thank you for your message!'
-    else:
-        return render_template('contact.html', title='Contact')
-
-
-@main.route("/about")
-def about():
-    return render_template('about.html', title='About')
