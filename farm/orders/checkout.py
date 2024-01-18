@@ -96,5 +96,4 @@ def checkout():
             total_amount = request.form['total']
             order_string = alipay.api_alipay_trade_page_pay(
                 out_trade_no=out_trade_no,
-                total_amount=total_amount,
-                subject=
+                total_amount=total_amount,)

@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>
-    <title>Upcoming Events</title>
-</head>
+{% block title %}Upcoming Events - Farm Fresh{% endblock %}
 
-<body>
+{% block content %}
+<main>
     <h1>Upcoming Events</h1>
     <ul>
         {% for event in events %}
         <li>
             <h2>{{ event.title }}</h2>
-            <p>{{ event.date }}</p>
+            <p>Date: {{ event.date }}</p>
             <p>{{ event.description }}</p>
             <p>Location: {{ event.location }}</p>
         </li>
         {% endfor %}
     </ul>
-</body>
-
-</html>
+</main>
+{% endblock %}

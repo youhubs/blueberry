@@ -19,7 +19,7 @@ def products():
         {'name': 'Dates', 'description': 'Organic medjool dates', 'price': 5.99},
         {'name': 'Carrots', 'description': 'Locally grown organic carrots', 'price': 1.99},
     ]
-    return render_template('product/products.html', products=products)
+    return render_template('products.html', products=products)
 
 
 @main.route('/events')

@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>
-    <title>Contact Us</title>
-</head>
+{% block title %}Contact Us - Farm Fresh{% endblock %}
 
-<body>
+{% block content %}
+<main>
     <h1>Contact Us</h1>
-    <p>Thank you for your interest in our farm! If you have any questions or comments, please don't hesitate to contact
-        us using the form below.</p>
-    <form method="POST" action="{{ url_for('contact') }}">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea><br><br>
-        <button type="submit">Send</button>
-    </form>
-</body>
-
-</html>
+    <p>Thank you for your interest in our farm! If you have any questions or comments, please don't hesitate to contact us using the information below or the form.</p>
+    
+    <div class="contact-info">
+        <p><strong>Email:</strong> your-email@example.com</p>
+        <p><strong>Phone:</strong> (123) 456-7890</p>
+        <p><strong>Address:</strong> 123 Farm Fresh Lane, Farmville, State, Country</p>
+    </div>
+</main>
+{% endblock %}

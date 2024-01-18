@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>
-    <title>Our Products</title>
-</head>
+{% block title %}Our Products - Farm Fresh{% endblock %}
 
-<body>
+{% block content %}
+<main>
     <h1>Our Products</h1>
     <ul>
         {% for product in products %}
@@ -16,6 +14,5 @@
         </li>
         {% endfor %}
     </ul>
-</body>
-
-</html>
+</main>
+{% endblock %}
