@@ -1,19 +1,20 @@
 from datetime import datetime
 from flask import current_app
-# from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
-from farm import db, login_manager
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
+# from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+
+from farm import db, login_manager
 
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), unique=True, nullable=False)
-    password = db.Column(db.String(60), nullable=False)
-    email = db.Column(db.String(100), unique=True, nullable=False)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(200), nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    is_admin = db.Column(db.Boolean, default=False)
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     posts = db.relationship('Post', backref='author', lazy=True)
-    is_admin = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
@@ -57,7 +58,7 @@ class Post(db.Model):
 def init_db():
     db.create_all()
     # Create a test user
-    new_user = User('a@a.com', 'aaaaaaaa')
+    new_user = User('abc@gmail.com', '12345')
     new_user.display_name = 'Sammy'
     db.session.add(new_user)
     db.session.commit()
