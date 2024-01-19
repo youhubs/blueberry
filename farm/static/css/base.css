@@ -5,7 +5,7 @@ h2,
 h3,
 p,
 ul {
-    margin: 0;
+    margin: 5px;
     padding: 0;
 }
 
@@ -18,7 +18,7 @@ body {
 
 /* Header and navigation styling */
 header {
-    background: #6ab47b;
+    background: #006400;
     /* Light green background for the header */
     color: white;
     padding: 10px 0;
@@ -26,7 +26,7 @@ header {
 }
 
 nav {
-    background: #6ab47b;
+    background: #006400;
     padding: 10px 0;
     color: #fff;
     text-align: center;
@@ -60,7 +60,7 @@ main {
 footer {
     text-align: center;
     padding: 10px 0;
-    background: #6ab47b;
+    background: #006400;
     /* Light green background for the footer */
     color: white;
 }
@@ -114,9 +114,10 @@ form button:hover {
 /* Additional styles for message and contact-info */
 .message,
 .contact-info {
-    background-color: #f9f9f9;
+    background-color: #d3ded1;
     border: 1px solid #ccc;
     padding: 20px;
+    margin-bottom: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
 }
