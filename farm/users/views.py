@@ -1,15 +1,15 @@
 from flask import render_template, url_for, flash, redirect, request, Blueprint
 from flask_login import login_user, current_user, logout_user, login_required
+
 from farm import db, bcrypt
 from farm.models import User, Post
-from farm.users.forms import (
-    RegistrationForm, LoginForm, UpdateAccountForm, RequestResetForm, ResetPasswordForm)
+from farm.users.forms import RegistrationForm, LoginForm, UpdateAccountForm, RequestResetForm, ResetPasswordForm
 from farm.users.utils import save_picture, send_reset_email
 
 users = Blueprint('users', __name__)
 
 
-@users.route("/register/", methods=['GET', 'POST'])
+@users.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))

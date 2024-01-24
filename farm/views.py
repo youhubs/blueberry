@@ -33,9 +33,9 @@ def contact():
 @main.route('/products')
 def products():
     products = [
-        {'name': 'Blueberries', 'description': 'Freshly picked blueberries', 'price': 2.99},
-        {'name': 'Dates', 'description': 'Organic medjool dates', 'price': 5.99},
-        {'name': 'Carrots', 'description': 'Locally grown organic carrots', 'price': 1.99},
+        {'name': '蓝莓', 'description': 'Freshly picked blueberries', 'price': 2.99},
+        {'name': '大枣', 'description': 'Organic medjool dates', 'price': 5.99},
+        {'name': '苹果', 'description': 'Locally grown organic carrots', 'price': 1.99},
     ]
     return render_template('products.html', products=products)
 
@@ -43,9 +43,9 @@ def products():
 @main.route('/events')
 def events():
     events = [
-        {'title': 'Spring Picking Day', 'date': 'April 15, 2023',
+        {'title': '春季蓝莓采摘日', 'date': 'April 15, 2023',
             'description': 'Come pick your own blueberries and strawberries!', 'location': '123 Main St.'},
-        {'title': 'Fall Harvest Festival', 'date': 'October 21, 2023',
+        {'title': '秋季大枣采摘日', 'date': 'October 21, 2023',
             'description': 'Join us for a day of fun and food!', 'location': '456 Elm St.'},
     ]
     return render_template('events.html', events=events)
